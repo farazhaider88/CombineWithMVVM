@@ -9,9 +9,9 @@ import Foundation
 
 // MARK: - Response
 struct Response: Decodable, Hashable {
-    let searchType, expression: String
-    let results: [Result]
-    let errorMessage: String
+    let searchType, expression: String?
+    let results: [Result]?
+    let errorMessage: String?
 }
 
 // MARK: - Result
@@ -25,9 +25,9 @@ struct Result: Decodable, Hashable {
         return lhs.id == rhs.id
     }
     
-    let id, resultType: String
-    let image: String
-    let title, resultDescription: String
+    let id, resultType: String?
+    let image: String?
+    let title, resultDescription: String?
 
     enum CodingKeys: String, CodingKey {
         case id, resultType, image, title
